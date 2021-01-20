@@ -31,9 +31,11 @@
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": ["./node_modules/jquery/dist/jquery.js",
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js"]
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "blogPessoalMateus"
+  "defaultProject": "blogPessoalMateus",
+  "cli": {
+    "analytics": "409a8fb1-55cf-4cab-86c0-476661f4c9c2"
+  }
 }
