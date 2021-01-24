@@ -7,34 +7,34 @@
                         <h1 class="text-center">CADASTRO: </h1>
                         <div class="form-group">
                             <label for="nome">NOME: </label>
-                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Seu nome">
+                            <input [(ngModel)]='user.nome' type="text" class="form-control" name="nome" id="nome" placeholder="Seu nome">
                         </div>
                         <div class="form-group">
                             <label for="usuario">USUÁRIO: </label>
-                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Seu usuário">
+                            <input [(ngModel)]='user.usuario' type="text" class="form-control" name="usuario" id="usuario" placeholder="Seu usuário">
                         </div>
                         <div class="form-group">
                             <label for="senha">SENHA: </label>
-                            <input type="password" class="form-control" name="senha" id="senha" placeholder="Sua senha">
+                            <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha" id="senha" placeholder="Sua senha">
                         </div>
                         <div class="form-group">
                             <label for="senhaConfirmacao">CONFIRMAR SENHA: </label>
-                            <input type="password" class="form-control" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="Confirme sua senha">
+                            <input [(ngModel)]='user.senha' type="password" class="form-control" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="Confirme sua senha">
                         </div>
                         <div class="form-group">
                             <label for="foto">LINK DA FOTO: </label>
-                            <input type="text" class="form-control" name="foto" id="foto" placeholder="Coloque aqui o link de sua foto">
+                            <input [(ngModel)]='user.foto' type="text" class="form-control" name="foto" id="foto" placeholder="Coloque aqui o link de sua foto">
                         </div>
                         <div class="form-group">
                             <label for="tipoUsuario">TIPO DE USUÁRIO: </label>
-                            <select class="form-control" name="tipoUsuario" id="tipoUsuario">
+                            <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
                                 <option> Selecione o seu usuário </option>
                                 <option value="normal"> Usuário normal </option>
                                 <option value="administrador"> Administrador</option>
                             </select>
-                            <div class="d-flex justify-content-center mb-5">
+                            <div class="d-flex justify-content-center mt-2">
                                 <button class="btn btn-danger mr-4" type="submit"> Limpar </button>
-                                <button class="btn btn-success" type="submit"> Entrar </button>
+                                <button class="btn btn-success" type="submit" (click)='cadastrar()'> Entrar </button>
                             </div>
                             
                         </div>
