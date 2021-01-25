@@ -1,9 +1,9 @@
-<!-- <app-menu> </app-menu>
-<app-rodape> </app-rodape>
-<app-entrar> </app-entrar>
-<app-cadastrar> </app-cadastrar> -->
+<!--No Angular não usamos o a href para navegar entre as páginas. Usamos o routerLink. Só usamos o a href para poder ir para páginas externas. 
+<app-entrar> </app-entrar> <app-cadastrar> </app-cadastrar> -->
 
-<!-- Esse comando é responsável por deixar as rotas dinâmicas -->
- <router-outlet></router-outlet> 
+<app-menu *ngIf='auth.logado()'> </app-menu>
 
- <!-- No Angular não usamos o a href para navegar entre as páginas. Usamos o routerLink. Só usamos o a href para poder ir para páginas externas. -->
+ <router-outlet></router-outlet>  <!-- Esse comando é responsável por deixar as rotas dinâmicas -->
+
+ <app-rodape *ngIf='auth.logado()'> </app-rodape>
+
