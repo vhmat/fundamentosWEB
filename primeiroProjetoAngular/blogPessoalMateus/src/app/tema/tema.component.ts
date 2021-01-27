@@ -26,7 +26,7 @@ listaTemas: Tema[]
       this.router.navigate(['/entrar'])
     }
   }
-
+  //Método para cadastrar :)
   cadastrar(){
     this.temaService.criarTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
