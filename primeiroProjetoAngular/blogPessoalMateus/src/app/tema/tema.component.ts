@@ -25,12 +25,22 @@ listaTemas: Tema[]
       alert('Sessão expirada! Favor fazer o login novamente.')
       this.router.navigate(['/entrar'])
     }
+
+    this.procureTodosTemas()
   }
+  procureTodosTemas(){
+    this.temaService.pegueTodosOsTemas().subscribe((resp: Tema[]) =>{
+      this.listaTemas = resp
+
+    })
+  }
+
   //Método para cadastrar :)
   cadastrar(){
     this.temaService.criarTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
       alert('Tema cadastrado com sucesso!')
+      this.procureTodosTemas()
       this.tema = new Tema()
     })
   }

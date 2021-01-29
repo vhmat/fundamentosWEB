@@ -17,7 +17,7 @@ export class TemaService {
     headers: new HttpHeaders().set('Authorization', environment.tolken)
   }
  
-  busqueTodosOsTemas(): Observable<Tema[]>{
+  pegueTodosOsTemas(): Observable<Tema[]>{
     return this.http.get<Tema[]>('http://localHost:8080/tema', this.tolken)
   }
 
