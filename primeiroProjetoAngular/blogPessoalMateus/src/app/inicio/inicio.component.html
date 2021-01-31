@@ -67,22 +67,22 @@
         <div class="modal-body">
             <div class="form-group">
                 <label for="titulo">TÍTULO: </label>
-                <input type="text" class='form-control' id='titulo' placeholder="Digite aqui o título">
+                <input [(ngModel)]='postagem.titulo' type="text" class='form-control' id='titulo' placeholder="Digite aqui o título">
             </div>
             <div class="form-group">
                 <label for="conteudo">CONTEÚDO:</label>
-                <textarea class="form-control" name="conteudo" id="conteudoPublicacao" rows="3" placeholder="Digite aqui sua mensagem :)"></textarea>
+                <textarea [(ngModel)]="postagem.texto" class="form-control" name="conteudo" id="conteudoPublicacao" rows="3" placeholder="Digite aqui sua mensagem :)"></textarea>
             </div>
             <div class="form-group">
                 <label for="tema" class="p-2">ESCOLHA O TEMA OU <a routerLink='/tema' data-dismiss="modal"> CRIE UM NOVO:</a> </label>
-                <select name="tema" id="tema" class="form-control">
-                    <option value="">TEMAS</option>
+                <select [(ngModel)]='idTema' (change)='findByIdTema()' name="tema" id="tema" class="form-control">
+                    <option *ngFor='let item of listaTemas' value="{{item.id}}"> {{item.descricao}} </option>
                 </select>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
-          <button type="button" class="btn btn-success">PUBLICAR</button>
+        <div class="modal-footer d-flex  justify-content-between">
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal" (click)='publicar()'>PUBLICAR</button>
         </div>
       </div>
     </div>
